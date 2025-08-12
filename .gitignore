@@ -1,7 +1,10 @@
 *
-!.gitignore
-!README.md
 !*/
 Code - OSS
+!.gitignore
+!README.md
 !hypr/**
 !quickshell/**
+!others/**
+!code-flags.conf
+!electron-flags.conf
