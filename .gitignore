@@ -1,0 +1,6 @@
+*
+!.gitignore
+!*/
+Code - OSS
+!hypr/**
+!quickshell/**
