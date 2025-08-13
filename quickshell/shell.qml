@@ -3,6 +3,7 @@ import Quickshell.Io
 import QtQuick
 
 PanelWindow {
+  id: panel
   anchors {
     top: true
     left: true
@@ -10,6 +11,7 @@ PanelWindow {
   }
 
   implicitHeight: 30
+  visible: false // Initially visible
 
   Text {
     id: clock

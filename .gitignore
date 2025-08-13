@@ -6,5 +6,6 @@ Code - OSS
 !hypr/**
 !quickshell/**
 !others/**
+!fuzzel/**
 !code-flags.conf
 !electron-flags.conf
