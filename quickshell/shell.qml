@@ -4,6 +4,7 @@ import QtQuick
 
 PanelWindow {
   id: panel
+  color: "black" // Set background to black
   anchors {
     top: true
     left: true
@@ -11,11 +12,13 @@ PanelWindow {
   }
 
   implicitHeight: 30
-  visible: false // Initially visible
+  // visible: false // Initially visible
 
   Text {
     id: clock
+    color: "white" // Set text color to white
     anchors.centerIn: parent
+    
 
     Process {
       // give the process object an id so we can talk
