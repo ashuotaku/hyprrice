@@ -14,6 +14,12 @@ PanelWindow {
   implicitHeight: 30
   // visible: false // Initially visible
 
+  Text{
+    id: hehe
+    text: "Arch!"
+    color: "white"
+  }
+
   Text {
     id: clock
     color: "white" // Set text color to white

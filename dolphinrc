@@ -1,0 +1,15 @@
+[ContextMenu]
+ShowOpenTerminal=false
+
+[General]
+GlobalViewProps=false
+SortingChoice=CaseInsensitiveSorting
+Version=202
+ViewPropsTimestamp=2025,8,12,23,22,59.955
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[PreviewSettings]
+Plugins=appimagethumbnail,audiothumbnail,comicbookthumbnail,cursorthumbnail,directorythumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,opendocumentthumbnail,svgthumbnail,windowsexethumbnail,windowsimagethumbnail,gdk-pixbuf-thumbnailer,librsvg,jxl,avif

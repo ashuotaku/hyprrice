@@ -10,3 +10,11 @@ Code
 !fuzzel/**
 !code-flags.conf
 !electron-flags.conf
+!Vencord/themes/caelestia.theme.css
+!kitty/**
+!btop/**
+!cava/**
+!gtk*/**
+!nwg-look/**
+!qt*/**
+!dolphinrc
