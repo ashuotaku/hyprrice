@@ -1,58 +1,16 @@
-import Quickshell
-import Quickshell.Io
+//@ pragma UseQApplication
+
 import QtQuick
+import Quickshell
+import "./modules/bar/"
 
-PanelWindow {
-  id: panel
-  color: "black" // Set background to black
-  anchors {
-    top: true
-    left: true
-    right: true
-  }
+ShellRoot {
+  id: root
 
-  implicitHeight: 30
-  // visible: false // Initially visible
 
-  Text{
-    id: hehe
-    text: "Arch!"
-    color: "white"
-  }
 
-  Text {
-    id: clock
-    color: "white" // Set text color to white
-    anchors.centerIn: parent
-    
-
-    Process {
-      // give the process object an id so we can talk
-      // about it from the timer
-      id: dateProc
-
-      command: ["date"]
-      running: true
-
-      stdout: StdioCollector {
-        onStreamFinished: clock.text = this.text
-      }
-    }
-
-    // use a timer to rerun the process at an interval
-    Timer {
-      // 1000 milliseconds is 1 second
-      interval: 1000
-
-      // start the timer immediately
-      running: true
-
-      // run the timer again when it ends
-      repeat: true
-
-      // when the timer is triggered, set the running property of the
-      // process to true, which reruns it if stopped.
-      onTriggered: dateProc.running = true
-    }
+  Loader {
+    active: true
+    sourceComponent: Bar{}
   }
 }
