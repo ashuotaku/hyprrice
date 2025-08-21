@@ -23,7 +23,7 @@ PanelWindow {
     Rectangle{
         id: bar
         anchors.fill: parent
-        color: "#1a1a1a"
+        color: "#f41a1a1a"
         radius: 10
         border.color: "#333333"
         border.width: 3
@@ -45,9 +45,11 @@ PanelWindow {
                 model: Hyprland.workspaces
 
                 Rectangle{
+                    property bool showWorkspace: modelData.id >= 0
                     width: 32
                     height: 24
-                    radius: 4
+                    visible: showWorkspace
+                    radius:4
                     color: modelData.active ? "#4a9eff" : "#333333"
                     border.color: "#555555"
                     border.width: 2
@@ -60,6 +62,7 @@ PanelWindow {
                     }
 
                     Text {
+                        // property string special: modelData.id < 0 ? "S" : modelData.id 
                         text: modelData.id
                         anchors.centerIn: parent
                         color: modelData.active ? "#ffffff" : "#cccccc"

@@ -18,3 +18,4 @@ Code
 !nwg-look/**
 !qt*/**
 !dolphinrc
+quickshell/.qmlls.ini
