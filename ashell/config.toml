@@ -1,0 +1,6 @@
+[appearance]
+scale_factor = 1
+style = "Islands"
+[appearance.menu]
+opacity = 1
+backdrop = 0.3
