@@ -52,7 +52,9 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("hyprpaper")
     hl.exec_cmd("hyprsunset")
     hl.exec_cmd("ashell")
-    hl.exec_cmd('"gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"')
+    hl.exec_cmd('gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"')
+    hl.exec_cmd("wl-paste --type text --watch cliphist store")
+    hl.exec_cmd("wl-paste --type image --watch cliphist store")
 end)
 
 -------------------------------
@@ -273,10 +275,12 @@ local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 --closeWindowBind:set_enabled(true)
 hl.bind(mainMod .. " + Delete", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("zen-browser"))
 hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("cliphist list | fuzzel --dmenu --with-nth 2 | cliphist decode | wl-copy"))
 
 ---hl.bind("SUPER + Print", hl.dsp.exec_cmd('grim -g "$(slurp -d)" - | wl-copy'))
 hl.bind("SUPER + Print", hl.dsp.exec_cmd('mkdir -p ~/Pictures/Screenshots && FILE=~/Pictures/Screenshots/$(date +%Y%m%d-%H%M%S).png && grim -g "$(slurp -d)" "$FILE" && wl-copy < "$FILE"'))
