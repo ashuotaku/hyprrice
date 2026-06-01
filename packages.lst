@@ -11,6 +11,7 @@ breeze
 brightnessctl
 btop
 btrfs-progs
+cliphist
 code
 curd
 dolphin
@@ -21,7 +22,9 @@ fuzzel
 git
 grim
 grub
+gtk4
 htop
+hypridle
 hyprland
 hyprlock
 hyprpaper
@@ -36,6 +39,7 @@ hyprsysteminfo
 imv
 intel-ucode
 kitty
+libinput-tools
 libnotify
 linux
 linux-firmware
@@ -49,6 +53,7 @@ networkmanager
 noto-fonts
 nvidia-open-dkms
 obs-studio
+obsidian
 openssh
 os-prober
 pacman-contrib
@@ -56,16 +61,20 @@ paru
 paru-debug
 pipewire-alsa
 pipewire-pulse
+playerctl
 preload
+prismlauncher
 qt5-wayland
 qt6-wayland
 quickshell
 slurp
+steam
 sudo
 swappy
 timeshift
 ttf-noto-nerd
 unzip
+wev
 wireplumber
 wl-clipboard
 xdg-desktop-portal-hyprland
