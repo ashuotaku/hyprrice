@@ -69,6 +69,9 @@ hl.env("LIBVA_DRIVER_NAME", "nvidia")
 hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
 hl.env("XDG_MENU_PREFIX", "arch-")
 hl.env("QT_QPA_PLATFORMTHEME", "hyprqt6engine")
+hl.env("NIXOS_OZONE_WL", "1")
+hl.env("ELECTRON_OZONE_PLATFORM_HINT", "wayland")
+hl.env("MOZ_ENABLE_WAYLAND", "1")
 
 -----------------------
 ----- PERMISSIONS -----
@@ -240,6 +243,8 @@ hl.config({
         kb_rules   = "",
 
         follow_mouse = 1,
+
+        numlock_by_default = true,
 
         sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
 

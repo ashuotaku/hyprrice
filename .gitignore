@@ -9,3 +9,9 @@
 !swappy/**
 !packages.lst
 !kdeglobals
+!curd/**
+!mpv/**
+!xdg-desktop-portal/**
+!chromium-flags.conf
+!electron-flags.conf
+!mimeapps.lst
