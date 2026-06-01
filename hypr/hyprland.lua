@@ -140,8 +140,8 @@ hl.config({
 
         blur = {
             enabled   = true,
-            size      = 3,
-            passes    = 1,
+            size      = 8,
+            passes    = 3,
             vibrancy  = 0.1696,
         },
     },
@@ -283,6 +283,7 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("zen-browser"))
 hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + period", hl.dsp.exec_cmd("emote"))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("cliphist list | fuzzel --dmenu --with-nth 2 | cliphist decode | wl-copy"))
@@ -366,6 +367,10 @@ hl.window_rule({
 })
 hl.window_rule({match = {class = "imv"}, float = true, center = true, size = {800, 600}})
 hl.window_rule({match = {class = "mpv"}, float = true, center = true, size = {1080, 720}})
+hl.window_rule({
+    match = { class = "kitty" },
+    opacity = 0.85,
+})
 
 -- Layer rules also return a handle.
 -- local overlayLayerRule = hl.layer_rule({

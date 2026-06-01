@@ -16,3 +16,5 @@
 !electron-flags.conf
 !mimeapps.lst
 !mako/**
+!nwg-look/**
+!gtk-*/**
