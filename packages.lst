@@ -17,11 +17,15 @@ curd
 dolphin
 dosfstools
 efibootmgr
+emote
 fastfetch
 fuzzel
+fwupd
 git
+gnome-themes-extra
 grim
 grub
+gtk3-demos
 gtk4
 htop
 hypridle
@@ -35,9 +39,9 @@ hyprqt6engine
 hyprshot
 hyprshutdown
 hyprsunset
-hyprsysteminfo
 imv
 intel-ucode
+inxi
 kitty
 libinput-tools
 libnotify
@@ -52,6 +56,7 @@ neovim
 networkmanager
 noto-fonts
 nvidia-open-dkms
+nwg-look
 obs-studio
 obsidian
 openssh
@@ -59,6 +64,7 @@ os-prober
 pacman-contrib
 paru
 paru-debug
+pavucontrol
 pipewire-alsa
 pipewire-pulse
 playerctl

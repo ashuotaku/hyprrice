@@ -283,7 +283,13 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("zen-browser"))
 hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(menu))
-hl.bind(mainMod .. " + period", hl.dsp.exec_cmd("emote"))
+hl.bind(mainMod .. " + period", hl.dsp.exec_cmd([[
+    sh -c '
+    emote &
+    sleep 0.1
+    hyprctl eval "hl.dispatch(hl.dsp.cursor.move({ x = 960, y = 540 }))"
+    '
+]]))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("cliphist list | fuzzel --dmenu --with-nth 2 | cliphist decode | wl-copy"))
@@ -367,10 +373,8 @@ hl.window_rule({
 })
 hl.window_rule({match = {class = "imv"}, float = true, center = true, size = {800, 600}})
 hl.window_rule({match = {class = "mpv"}, float = true, center = true, size = {1080, 720}})
-hl.window_rule({
-    match = { class = "kitty" },
-    opacity = 0.85,
-})
+hl.window_rule({match = { class = "kitty" }, opacity = 0.85,})
+hl.window_rule({match = { class = "Emote" }, pin = true})
 
 -- Layer rules also return a handle.
 -- local overlayLayerRule = hl.layer_rule({
