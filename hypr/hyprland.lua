@@ -301,6 +301,7 @@ hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu --with-nth 2 | cliphist decode | wl-copy"))
 hl.bind(mainMod .. " + backspace", hl.dsp.exec_cmd(power))
+hl.bind("SUPER + SHIFT + F23", hl.dsp.exec_cmd("code"))
 
 ---hl.bind("SUPER + Print", hl.dsp.exec_cmd('grim -g "$(slurp -d)" - | wl-copy'))
 hl.bind("SUPER + Print", hl.dsp.exec_cmd('mkdir -p ~/Pictures/Screenshots && FILE=~/Pictures/Screenshots/$(date +%Y%m%d-%H%M%S).png && grim -g "$(slurp -d)" "$FILE" && wl-copy < "$FILE"'))
