@@ -1,0 +1,13 @@
+[/home/ashu/.local/share/Trash]
+Days=30
+LimitReachedAction=1
+Percent=10
+UseSizeLimit=true
+UseTimeLimit=true
+
+[/mnt/Data/.Trash-1000]
+Days=30
+LimitReachedAction=1
+Percent=5
+UseSizeLimit=true
+UseTimeLimit=true

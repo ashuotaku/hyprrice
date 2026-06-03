@@ -17,7 +17,7 @@
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 hl.monitor({
     output   = "",
-    mode     = "1920x1080@144",
+    mode     = "preferred",
     position = "auto",
     scale    = "1.25"
 })
@@ -29,7 +29,8 @@ hl.monitor({
 -- Set programs that you use
 local terminal    = "kitty"
 local fileManager = "dolphin"
-local menu        = "fuzzel"
+local menu        = "~/.config/rofi/launchers/type-2/launcher.sh"
+local power = "~/.config/rofi/powermenu/type-2/powermenu.sh"
 
 
 -------------------
@@ -55,6 +56,7 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd('gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"')
     hl.exec_cmd("wl-paste --type text --watch cliphist store")
     hl.exec_cmd("wl-paste --type image --watch cliphist store")
+    hl.exec_cmd("syncthing --no-browser")
 end)
 
 -------------------------------
@@ -72,6 +74,7 @@ hl.env("QT_QPA_PLATFORMTHEME", "hyprqt6engine")
 hl.env("NIXOS_OZONE_WL", "1")
 hl.env("ELECTRON_OZONE_PLATFORM_HINT", "wayland")
 hl.env("MOZ_ENABLE_WAYLAND", "1")
+hl.env("NVD_BACKEND", "direct")
 
 -----------------------
 ----- PERMISSIONS -----
@@ -149,6 +152,9 @@ hl.config({
     animations = {
         enabled = true,
     },
+    xwayland = {
+        force_zero_scaling = true
+    }
 })
 
 -- Default curves and animations, see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Animations/
@@ -246,7 +252,7 @@ hl.config({
 
         numlock_by_default = true,
 
-        sensitivity = 0.8, -- -1.0 - 1.0, 0 means no modification.
+        sensitivity = 0.7, -- -1.0 - 1.0, 0 means no modification.
 
         touchpad = {
             natural_scroll = true,
@@ -282,6 +288,7 @@ hl.bind(mainMod .. " + Delete", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/n
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("zen-browser"))
 hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + period", hl.dsp.exec_cmd([[
     sh -c '
@@ -292,7 +299,8 @@ hl.bind(mainMod .. " + period", hl.dsp.exec_cmd([[
 ]]))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
-hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("cliphist list | fuzzel --dmenu --with-nth 2 | cliphist decode | wl-copy"))
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu --with-nth 2 | cliphist decode | wl-copy"))
+hl.bind(mainMod .. " + backspace", hl.dsp.exec_cmd(power))
 
 ---hl.bind("SUPER + Print", hl.dsp.exec_cmd('grim -g "$(slurp -d)" - | wl-copy'))
 hl.bind("SUPER + Print", hl.dsp.exec_cmd('mkdir -p ~/Pictures/Screenshots && FILE=~/Pictures/Screenshots/$(date +%Y%m%d-%H%M%S).png && grim -g "$(slurp -d)" "$FILE" && wl-copy < "$FILE"'))
@@ -371,10 +379,13 @@ hl.window_rule({
 
     no_focus = true,
 })
+hl.window_rule({match = { class = ".*" }, opacity = 0.85,})
 hl.window_rule({match = {class = "imv"}, float = true, center = true, size = {800, 600}})
-hl.window_rule({match = {class = "mpv"}, float = true, center = true, size = {1080, 720}})
+hl.window_rule({match = {class = "mpv"}, float = true, center = true, size = {1080, 720}, opacity = 1.0})
 hl.window_rule({match = { class = "kitty" }, opacity = 0.85,})
-hl.window_rule({match = { class = "Emote" }, pin = true})
+hl.window_rule({match = { class = "zen" }, opacity = 1,})
+hl.window_rule({match = { class = "swappy" }, opacity = 1,})
+hl.window_rule({match = { fullscreen = true }, opacity = 1.0})
 
 -- Layer rules also return a handle.
 -- local overlayLayerRule = hl.layer_rule({

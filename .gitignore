@@ -18,3 +18,7 @@
 !mako/**
 !nwg-look/**
 !gtk-*/**
+!tlp.conf
+!fstab
+!ktrashrc
+!services.lst
