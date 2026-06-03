@@ -3,3 +3,4 @@ sudo systemctl enable nvidia-persistenced.service
 sudo systemctl enable tlp
 sudo systemctl enable fwupd.service
 sudo systemctl enable intel-undervolt.service
+sudo systemctl enable warp-svc.service

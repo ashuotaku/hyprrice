@@ -12,8 +12,9 @@ brightnessctl
 btop
 btrfs-progs
 cliphist
+cloudflare-warp-bin
 code
-curd
+curd-git
 dolphin
 dosfstools
 efibootmgr
@@ -43,8 +44,10 @@ hyprsunset
 imv
 intel-media-driver
 intel-ucode
+intel-undervolt
 inxi
 kitty
+lenovolegionlinux-dkms-git
 lenovolegionlinux-git
 libnotify
 libva-nvidia-driver
@@ -54,8 +57,10 @@ linux-firmware
 linux-headers
 ly
 mako
+man-db
 mesa-utils
 nano
+ncdu
 neovim
 networkmanager
 noto-fonts
@@ -75,6 +80,7 @@ playerctl
 powertop
 preload
 prismlauncher
+proxychains-ng
 python-pillow
 qt5-wayland
 qt6-wayland
@@ -94,4 +100,5 @@ wireplumber
 wl-clipboard
 xdg-desktop-portal-hyprland
 xdg-desktop-portal-kde
+ytdl
 zen-browser-bin
