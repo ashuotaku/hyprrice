@@ -22,3 +22,4 @@
 !fstab
 !ktrashrc
 !services.lst
+!applications/**
