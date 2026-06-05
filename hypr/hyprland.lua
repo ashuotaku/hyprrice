@@ -31,7 +31,8 @@ local terminal    = "kitty"
 local fileManager = "dolphin"
 local menu        = "~/.config/rofi/launchers/type-2/launcher.sh"
 local power = "~/.config/rofi/powermenu/type-2/powermenu.sh"
-
+local copilot = "code .config"
+local system =  "kitty -e btop"
 
 -------------------
 ---- AUTOSTART ----
@@ -110,11 +111,11 @@ hl.config({
             left = 5,
         },
 
-        border_size = 2,
+        border_size = 3,
 
         col = {
-            active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
-            inactive_border = "rgba(595959aa)",
+            active_border   = { colors = {"rgba(286983ee)", "rgba(56949fee)"}, angle = 45 },
+            inactive_border = "rgba(191724ff)",
         },
 
         -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
@@ -131,8 +132,8 @@ hl.config({
         rounding_power = 2,
 
         -- Change transparency of focused and unfocused windows
-        active_opacity   = 1.0,
-        inactive_opacity = 1.0,
+        active_opacity   = 1,
+        inactive_opacity = 0.75,
 
         shadow = {
             enabled      = true,
@@ -252,7 +253,7 @@ hl.config({
 
         numlock_by_default = true,
 
-        sensitivity = 0.7, -- -1.0 - 1.0, 0 means no modification.
+        sensitivity = 1, -- -1.0 - 1.0, 0 means no modification.
 
         touchpad = {
             natural_scroll = true,
@@ -301,11 +302,13 @@ hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu --with-nth 2 | cliphist decode | wl-copy"))
 hl.bind(mainMod .. " + backspace", hl.dsp.exec_cmd(power))
-hl.bind("SUPER + SHIFT + F23", hl.dsp.exec_cmd("code"))
+hl.bind("SUPER + SHIFT + F23", hl.dsp.exec_cmd(copilot))
+hl.bind("CTRL + SHIFT + ESCAPE", hl.dsp.exec_cmd(system))
 
 ---hl.bind("SUPER + Print", hl.dsp.exec_cmd('grim -g "$(slurp -d)" - | wl-copy'))
 hl.bind("SUPER + Print", hl.dsp.exec_cmd('mkdir -p ~/Pictures/Screenshots && FILE=~/Pictures/Screenshots/$(date +%Y%m%d-%H%M%S).png && grim -g "$(slurp -d)" "$FILE" && wl-copy < "$FILE"'))
 hl.bind("Print", hl.dsp.exec_cmd('grim -g "$(slurp)" - | swappy -f -'))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd('grim -g "$(slurp)" - | swappy -f -'))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
@@ -323,7 +326,7 @@ end
 
 -- Example special workspace (scratchpad)
 hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
+hl.bind(mainMod .. " + CTRL + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
@@ -383,9 +386,11 @@ hl.window_rule({
 hl.window_rule({match = { class = ".*" }, opacity = 0.85,})
 hl.window_rule({match = {class = "imv"}, float = true, center = true, size = {800, 600}})
 hl.window_rule({match = {class = "mpv"}, float = true, center = true, size = {1080, 720}, opacity = 1.0})
-hl.window_rule({match = { class = "kitty" }, opacity = 0.85,})
-hl.window_rule({match = { class = "zen" }, opacity = 1,})
+hl.window_rule({match = { class = "kitty" }, opacity = 0.9,})
+hl.window_rule({match = { class = "zen" }, opacity = 1})
 hl.window_rule({match = { class = "swappy" }, opacity = 1,})
+hl.window_rule({match = { class = "obsidian" }, opacity = 0.9,})
+hl.window_rule({match = { class = "Minecraft.*" }, opacity = 1,})
 hl.window_rule({match = { fullscreen = true }, opacity = 1.0})
 
 -- Layer rules also return a handle.
