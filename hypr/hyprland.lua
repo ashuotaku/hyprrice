@@ -33,6 +33,7 @@ local menu        = "~/.config/rofi/launchers/type-2/launcher.sh"
 local power = "~/.config/rofi/powermenu/type-2/powermenu.sh"
 local copilot = "code .config"
 local system =  "kitty -e btop"
+local lock = "hyprlock"
 
 -------------------
 ---- AUTOSTART ----
@@ -57,7 +58,8 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd('gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"')
     hl.exec_cmd("wl-paste --type text --watch cliphist store")
     hl.exec_cmd("wl-paste --type image --watch cliphist store")
-    hl.exec_cmd("syncthing --no-browser")
+    hl.exec_cmd("dbus-update-activation-environment --systemd --all")
+    hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
 end)
 
 -------------------------------
@@ -132,8 +134,8 @@ hl.config({
         rounding_power = 2,
 
         -- Change transparency of focused and unfocused windows
-        active_opacity   = 1,
-        inactive_opacity = 0.75,
+        -- active_opacity   = 1,
+        -- inactive_opacity = 0.8,
 
         shadow = {
             enabled      = true,
@@ -288,8 +290,9 @@ local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + Delete", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("zen-browser"))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(lock))
 hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen({ action = "toggle" }))
+hl.bind("ALT + Return", hl.dsp.window.fullscreen({ action = "toggle" }))
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + period", hl.dsp.exec_cmd([[
     sh -c '
@@ -383,14 +386,16 @@ hl.window_rule({
 
     no_focus = true,
 })
-hl.window_rule({match = { class = ".*" }, opacity = 0.85,})
-hl.window_rule({match = {class = "imv"}, float = true, center = true, size = {800, 600}})
+hl.window_rule({match = { class = ".*" }, opacity = "0.85 0.7"})
+hl.window_rule({match = {class = "org.kde.gwenview"}, float = true, center = true, size = {800, 600}})
 hl.window_rule({match = {class = "mpv"}, float = true, center = true, size = {1080, 720}, opacity = 1.0})
-hl.window_rule({match = { class = "kitty" }, opacity = 0.9,})
-hl.window_rule({match = { class = "zen" }, opacity = 1})
+hl.window_rule({match = { class = "kitty" }, opacity = "0.9 0.6",})
+hl.window_rule({match = { class = "zen" }, opacity = "1 1"})
 hl.window_rule({match = { class = "swappy" }, opacity = 1,})
-hl.window_rule({match = { class = "obsidian" }, opacity = 0.9,})
+hl.window_rule({match = { class = "org.kde.gwenview" }, opacity = 1,})
+hl.window_rule({match = { class = "obsidian" }, opacity = "0.9 0.75",})
 hl.window_rule({match = { class = "Minecraft.*" }, opacity = 1,})
+hl.window_rule({match = { class = "mcpelauncher-client" }, opacity = 1,})
 hl.window_rule({match = { fullscreen = true }, opacity = 1.0})
 
 -- Layer rules also return a handle.

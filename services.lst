@@ -4,3 +4,5 @@ sudo systemctl enable tlp
 sudo systemctl enable fwupd.service
 sudo systemctl enable intel-undervolt.service
 sudo systemctl enable warp-svc.service
+sudo systemctl enaable preload
+systemctl --user enable syncthing

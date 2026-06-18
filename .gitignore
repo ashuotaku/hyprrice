@@ -22,3 +22,9 @@
 !ktrashrc
 !services.lst
 !applications/**
+!legionaura/**
+!rofi/**
+!kiorc
+!ktrashrc
+!post-install
+!intel-undervolt.conf

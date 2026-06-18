@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "effect": "hue",
+  "speed": 2,
+  "brightness": 1,
+  "waveDir": "none",
+  "zones": [
+    "000000",
+    "000060",
+    "1d04b6",
+    "b75500"
+  ]
+}
