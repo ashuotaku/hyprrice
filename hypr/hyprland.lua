@@ -292,7 +292,7 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("zen-browser"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(lock))
 hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
-hl.bind("ALT + Return", hl.dsp.window.fullscreen({ action = "toggle" }))
+hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + period", hl.dsp.exec_cmd([[
     sh -c '

@@ -2,3 +2,4 @@ sudo fwupdmgr refresh
 sudo fwupdmgr get-updates
 sudo fwupdmgr update
 ./services.lst
+ln -sf /mnt/Data/Desktop Pictures, etc.
