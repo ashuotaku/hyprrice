@@ -17,8 +17,7 @@
 !mako/**
 !nwg-look/**
 !gtk-*/**
-!tlp.conf
-!fstab
+!etc/**
 !ktrashrc
 !services.lst
 !applications/**
@@ -27,4 +26,3 @@
 !kiorc
 !ktrashrc
 !post-install
-!intel-undervolt.conf
