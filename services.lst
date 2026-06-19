@@ -1,4 +1,5 @@
 sudo systemctl enable cronie
+sudo systemctl enable ly
 sudo systemctl enable nvidia-persistenced.service
 sudo systemctl enable tlp
 sudo systemctl enable fwupd.service
