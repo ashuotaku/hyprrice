@@ -3,3 +3,7 @@ sudo fwupdmgr get-updates
 sudo fwupdmgr update
 ./services.lst
 ln -sf /mnt/Data/Desktop Pictures, etc.
+fix /mnt/Data permissions
+install rofi fonts
+copy paste /etc configs
+sudo intel-undervolt apply
