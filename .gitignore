@@ -19,7 +19,7 @@
 !mimeapps.lst
 !mpv/**
 !nwg-look/**
-!packages.lst
+!packages/**
 !post-install
 !rofi/**
 !services.lst

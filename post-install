@@ -7,3 +7,4 @@ fix /mnt/Data permissions
 install rofi fonts
 copy paste /etc configs
 sudo intel-undervolt apply
+open timeshift and setup
