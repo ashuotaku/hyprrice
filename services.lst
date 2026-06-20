@@ -4,6 +4,8 @@ sudo systemctl disable getty@tty1.service
 sudo systemctl enable nvidia-persistenced.service
 sudo systemctl enable tlp
 sudo systemctl enable intel-undervolt.service
+sudo systemctl enable lactd
 sudo systemctl enable warp-svc.service
 sudo systemctl enaable preload
 systemctl --user enable syncthing
+sudo systemctl enable fstrim.timer

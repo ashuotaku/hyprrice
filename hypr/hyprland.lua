@@ -386,10 +386,10 @@ hl.window_rule({
 
     no_focus = true,
 })
-hl.window_rule({match = { class = ".*" }, opacity = "0.85 0.7"})
+hl.window_rule({match = { class = ".*" }, opacity = "0.85 1"})
 hl.window_rule({match = {class = "org.kde.gwenview"}, float = true, center = true, size = {800, 600}})
 hl.window_rule({match = {class = "mpv"}, float = true, center = true, size = {1080, 720}, opacity = 1.0})
-hl.window_rule({match = { class = "kitty" }, opacity = "0.9 0.6",})
+hl.window_rule({match = { class = "kitty" }, opacity = "0.9 1",})
 hl.window_rule({match = { class = "zen" }, opacity = "1 1"})
 hl.window_rule({match = { class = "swappy" }, opacity = 1,})
 hl.window_rule({match = { class = "org.kde.gwenview" }, opacity = 1,})
