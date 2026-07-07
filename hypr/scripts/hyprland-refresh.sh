@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Exit early if a temporary lock file exists in user local share folder
-if [ -f "/home/ashu/.local/share/hyprland-refresh.lock" ]; then
+if [ -f "/home/ashu/.local/state/hyprland-refresh.lock" ]; then
     exit 0
 fi
 
