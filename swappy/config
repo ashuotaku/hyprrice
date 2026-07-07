@@ -1,3 +1,11 @@
 [Default]
 save_dir=$HOME/Pictures/Screenshots
 save_filename_format=%Y%m%d-%H%M%S.png
+[list]
+order=numeric
+all = true
+[keys]
+Right = next_file
+Left = prev_file
+Space = next_file
+

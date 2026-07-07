@@ -1,0 +1,2 @@
+SUBSYSTEM=="power_supply", ATTR{online}=="0", RUN+="/home/ashu/.config/hypr/scripts/hyprland-refresh.sh bat"
+SUBSYSTEM=="power_supply", ATTR{online}=="1", RUN+="/home/ashu/.config/hypr/scripts/hyprland-refresh.sh ac"

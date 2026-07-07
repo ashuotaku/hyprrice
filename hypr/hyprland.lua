@@ -63,6 +63,7 @@ hl.on("hyprland.start", function ()
     -- hl.exec_cmd("systemctl --user start hyprland-session.target")
     hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
     hl.exec_cmd('kdeconnectd')
+    hl.exec_cmd('arrpc')
 end)
 
 -------------------------------
@@ -305,6 +306,8 @@ hl.bind(mainMod .. " + period", hl.dsp.exec_cmd([[
     hyprctl eval "hl.dispatch(hl.dsp.cursor.move({ x = 960, y = 540 }))"
     '
 ]]))
+-- Toggle refresh rate automation lock
+hl.bind("SUPER + SHIFT + R", hl.dsp.exec_cmd("/home/ashu/.config/hypr/scripts/toggle-refresh.sh"), { description = "Toggle Refresh Rate Lock" })
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu --with-nth 2 | cliphist decode | wl-copy"))
