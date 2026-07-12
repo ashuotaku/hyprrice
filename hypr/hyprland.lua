@@ -53,6 +53,7 @@ local lock = "hyprlock"
 hl.on("hyprland.start", function () 
     hl.exec_cmd("systemctl --user start hyprpolkitagent")
     hl.exec_cmd("hyprpaper")
+    --hl.exec_cmd("mpvpaper -o \"--loop-file --no-audio --osc=no\" eDP-1 ~/Videos/Wallpapers/himmel-x-frieren-beyond-the-journeys-end-moewalls-com.mp4")
     hl.exec_cmd("hyprsunset")
     hl.exec_cmd("ashell")
     hl.exec_cmd('gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"')
@@ -238,8 +239,9 @@ hl.config({
 
 hl.config({
     misc = {
-        force_default_wallpaper = -1,    -- Set to 0 or 1 to disable the anime mascot wallpapers
-        disable_hyprland_logo   = false, -- If true disables the random hyprland logo / anime girl background. :(
+        disable_hyprland_logo = true,
+        force_default_wallpaper = 0,
+        disable_splash_rendering = true,
     },
 })
 
@@ -404,6 +406,7 @@ hl.window_rule({match = { class = "org.kde.gwenview" }, opacity = 1,})
 hl.window_rule({match = { class = "obsidian" }, opacity = "0.95 0.8",})
 hl.window_rule({match = { class = "Minecraft.*" }, opacity = 1,})
 hl.window_rule({match = { class = "mcpelauncher-client" }, opacity = 1,})
+hl.window_rule({match = { class = "stremio-enhanced" }, opacity = 1.0,})
 hl.window_rule({match = { fullscreen = true }, opacity = 1.0})
 
 -- Layer rules also return a handle.
