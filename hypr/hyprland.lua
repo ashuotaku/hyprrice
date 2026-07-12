@@ -34,6 +34,7 @@ local power = "~/.config/rofi/powermenu/type-2/powermenu.sh"
 local copilot = "code .config"
 local system =  "kitty -e btop"
 local lock = "hyprlock"
+local clipboard = "cliphist list | rofi -dmenu --display-columns 2 -show-icons | cliphist decode | wl-copy"
 
 -------------------
 ---- AUTOSTART ----
@@ -312,7 +313,7 @@ hl.bind(mainMod .. " + period", hl.dsp.exec_cmd([[
 hl.bind("SUPER + SHIFT + R", hl.dsp.exec_cmd("/home/ashu/.config/hypr/scripts/toggle-refresh.sh"), { description = "Toggle Refresh Rate Lock" })
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
-hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu --with-nth 2 | cliphist decode | wl-copy"))
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(clipboard))
 hl.bind(mainMod .. " + backspace", hl.dsp.exec_cmd(power))
 hl.bind("SUPER + SHIFT + F23", hl.dsp.exec_cmd(copilot))
 hl.bind("CTRL + SHIFT + ESCAPE", hl.dsp.exec_cmd(system))

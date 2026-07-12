@@ -1,0 +1,19 @@
+version: 6
+daemon:
+  log_level: info
+  admin_group: wheel
+  disable_clocks_cleanup: false
+apply_settings_timer: 5
+gpus:
+  10DE:28E0-17AA:3D06-0000:01:00.0:
+    fan_control_enabled: false
+    min_core_clock: 210
+    min_memory_clock: 405
+    max_core_clock: 2800
+    max_memory_clock: 8076
+    gpu_clock_offsets:
+      0: 100
+    mem_clock_offsets:
+      0: 150
+current_profile: null
+auto_switch_profiles: false
