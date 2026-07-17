@@ -21,6 +21,8 @@ cloudflare-warp-bin
 code
 cuda
 curd
+docker
+docker-compose
 dolphin
 dosfstools
 efibootmgr
@@ -105,6 +107,7 @@ sudo
 swappy
 syncthing
 timeshift
+tlp-pd
 tlpui
 tmux
 ttf-jetbrains-mono
