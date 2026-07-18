@@ -1,2 +1,2 @@
 # /dev/nvme0n1p2 LABEL=Data
-UUID=1C9AF38C9AF36126	/mnt/Data 	ntfs3     	rw,exec,relatime,uid=1000,gid=982,acl,iocharset=utf8,prealloc,umask=000	0 0
+UUID=4F8F8A094BF342B5   /mnt/Data       ntfs3           rw,exec,relatime,uid=1000,gid=982,dmask=022,fmask=133,windows_names,discard     0 0
