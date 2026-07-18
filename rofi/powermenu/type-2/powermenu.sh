@@ -63,9 +63,11 @@ run_cmd() {
 	selected="$(confirm_exit)"
 	if [[ "$selected" == "$yes" ]]; then
 		if [[ $1 == '--shutdown' ]]; then
-			hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown -P 0'
+			hyprshutdown -t 'Shutting down...'
+			shutdown -P 0
 		elif [[ $1 == '--reboot' ]]; then
-			hyprshutdown -t 'Restarting...' --post-cmd 'reboot'
+			hyprshutdown -t 'Restarting...'
+			reboot
 		elif [[ $1 == '--suspend' ]]; then
 			# mpc -q pause
 			# amixer set Master mute
@@ -73,6 +75,7 @@ run_cmd() {
 			hyprlock
 		elif [[ $1 == '--logout' ]]; then
 			hyprshutdown
+			niri msg action quit --skip-confirmation
 		fi
 	else
 		exit 0

@@ -65,6 +65,7 @@ hl.on("hyprland.start", function ()
     -- hl.exec_cmd("systemctl --user start hyprland-session.target")
     hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
     hl.exec_cmd('kdeconnectd')
+    hl.exec_cmd("qs -c overview")
     hl.exec_cmd('arrpc')
 end)
 
@@ -133,7 +134,7 @@ hl.config({
         -- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
         allow_tearing = false,
 
-        layout = "dwindle",
+        layout = "master",
     },
 
     decoration = {
@@ -223,7 +224,7 @@ hl.config({
 -- See https://wiki.hypr.land/Configuring/Layouts/Master-Layout/ for more
 hl.config({
     master = {
-        new_status = "master",
+        new_status = "slave",
     },
 })
 
@@ -302,6 +303,7 @@ hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(lock))
 hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(menu))
+hl.bind("SUPER + TAB", hl.dsp.exec_cmd("qs ipc -c overview call overview toggle"))
 hl.bind(mainMod .. " + period", hl.dsp.exec_cmd([[
     sh -c '
     emote &
