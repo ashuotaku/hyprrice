@@ -5,6 +5,8 @@
 !applications/**
 !ashell/**
 !chromium-flags.conf
+!config.kdl
+!environment.d
 !curd/**
 !dolphinrc
 !electron-flags.conf
@@ -20,10 +22,12 @@
 !mimeapps.lst
 !mpv/**
 !nwg-look/**
-!niri/**
 !packages/**
 !post-install
 !rofi/**
 !services.lst
+!scratchpad
+!stremio-enhanced/plugins/**
+!stremio-enhanced/themes/**
 !swappy/**
 !xdg-desktop-portal/**

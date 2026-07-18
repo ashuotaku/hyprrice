@@ -52,8 +52,9 @@ hyprsunset
 intel-media-driver
 intel-ucode
 intel-undervolt
+inter-font
 kdeconnect
-kitty
+kimageformats
 kvantum
 lact
 legionaura
@@ -76,6 +77,7 @@ ncdu
 neovim
 networkmanager
 niri
+noctalia-shell
 noto-fonts
 noto-fonts-cjk
 npm
@@ -100,8 +102,9 @@ powertop
 preload
 prismlauncher
 qt5-wayland
+qt5ct
 qt6-wayland
-quickshell
+qt6ct
 quickshell-overview-git
 rofi
 sshfs
@@ -116,6 +119,7 @@ timeshift
 tlp-pd
 tlpui
 tmux
+ttf-fira-code
 ttf-jetbrains-mono
 ttf-jetbrains-mono-nerd
 ttf-noto-nerd

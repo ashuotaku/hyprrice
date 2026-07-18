@@ -1,0 +1,6 @@
+[window]
+decorations = "none"
+[general]
+import = [
+    "~/.config/alacritty/dank-theme.toml",
+]

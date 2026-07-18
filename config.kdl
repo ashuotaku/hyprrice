@@ -91,7 +91,7 @@ input {
     }
 
     // Uncomment this to make the mouse warp to the center of newly focused windows.
-    warp-mouse-to-focus mode="center-xy"
+    // warp-mouse-to-focus mode="center-xy"
     // Focus windows and outputs automatically when moving the mouse into them.
     // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
     focus-follows-mouse max-scroll-amount="10%"
@@ -326,7 +326,7 @@ hotkey-overlay {
 // Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
 // This option will also fix border/focus ring drawing behind some semitransparent windows.
 // After enabling or disabling this, you need to restart the apps for this to take effect.
-//prefer-no-csd
+prefer-no-csd
 
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
@@ -415,7 +415,9 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
-    Mod+A hotkey-overlay-title="Run an Application: rofi" { spawn "~/.config/rofi/launchers/type-2/launcher.sh"; }
+    Ctrl+Shift+Escape{
+        spawn-sh "alacritty -e btop"
+    }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
@@ -652,16 +654,8 @@ binds {
     // rather than stacked on top of each other.
     Mod+W { toggle-column-tabbed-display; }
 
-    Mod+V repeat=false {
-        spawn "sh" "-c" "cliphist list | rofi -dmenu --display-columns 2 -show-icons | cliphist decode | wl-copy";
-    }
-
     Mod+Period repeat=false{
         spawn "emote"
-    }
-
-    Mod+Backspace repeat=false{
-        spawn "~/.config/rofi/powermenu/type-2/powermenu.sh"
     }
 
     SUPER+SHIFT+F23{
@@ -705,3 +699,7 @@ binds {
 
 // DMS Include Configs
 include "dms/layout.kdl"
+include "dms/binds.kdl"
+include "dms/windowrules.kdl"
+include "dms/cursor.kdl"
+include "dms/outputs.kdl"
