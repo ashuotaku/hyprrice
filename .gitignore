@@ -1,6 +1,7 @@
 *
 !*/
 !.gitignore
+!alacritty/**
 !applications/**
 !ashell/**
 !chromium-flags.conf
@@ -19,6 +20,7 @@
 !mimeapps.lst
 !mpv/**
 !nwg-look/**
+!niri/**
 !packages/**
 !post-install
 !rofi/**
