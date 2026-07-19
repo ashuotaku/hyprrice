@@ -1,0 +1,2 @@
+SUBSYSTEM=="power_supply", ATTR{online}=="0", RUN+="/usr/bin/sudo -u ashu XDG_RUNTIME_DIR=/run/user/1000 sh -c '[ ! -f /home/ashu/.local/state/display-refresh.lock ] && dms ipc outputs setProfile \"Low Refresh Rate\"'"
+SUBSYSTEM=="power_supply", ATTR{online}=="1", RUN+="/usr/bin/sudo -u ashu XDG_RUNTIME_DIR=/run/user/1000 sh -c '[ ! -f /home/ashu/.local/state/display-refresh.lock ] && dms ipc outputs setProfile \"High Refresh Rate\"'"

@@ -1,5 +1,8 @@
 {
   "emojiLauncher": {
     "enabled": true
+  },
+  "niriDS": {
+    "enabled": true
   }
 }

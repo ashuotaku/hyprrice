@@ -1,6 +1,6 @@
 #!/bin/sh
 
-LOCK_FILE="/home/ashu/.local/state/hyprland-refresh.lock"
+LOCK_FILE="/home/ashu/.local/state/display-refresh.lock"
 
 if [ -f "$LOCK_FILE" ]; then
     # If locked, unlock it to enable the automatic switching

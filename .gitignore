@@ -25,6 +25,8 @@ DankMaterialShell/plugins/**
 !mako/**
 !mimeapps.lst
 !mpv/**
+!niri/**
+niri/*backup*
 !nwg-look/**
 !packages/**
 !post-install

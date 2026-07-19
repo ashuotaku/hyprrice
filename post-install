@@ -8,3 +8,6 @@ install rofi fonts
 copy paste /etc configs
 sudo intel-undervolt apply
 open timeshift and setup
+
+
+sudo udevadm control --reload-rules && sudo udevadm trigger
