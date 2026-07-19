@@ -6,8 +6,10 @@
 !ashell/**
 !chromium-flags.conf
 !config.kdl
-!environment.d
+!environment.d/**
 !curd/**
+!DankMaterialShell/**
+DankMaterialShell/plugins/**
 !dolphinrc
 !electron-flags.conf
 !etc/**

@@ -140,6 +140,7 @@ TerminalApplication=kitty
 LookAndFeelPackage=org.kde.breezedark.desktop
 contrast=4
 frameContrast=0.2
+widgetStyle=qt6ct-style
 
 [KFileDialog Settings]
 Allow Expansion=false
