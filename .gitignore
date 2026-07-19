@@ -27,6 +27,7 @@
 !rofi/**
 !services.lst
 !scratchpad
+!stremio-enchanced-flags.conf
 !stremio-enhanced/plugins/**
 !stremio-enhanced/themes/**
 !swappy/**
