@@ -1,2 +1,31 @@
-# /dev/nvme0n1p2 LABEL=Data
-UUID=4F8F8A094BF342B5   /mnt/Data       ntfs3           rw,exec,relatime,uid=1000,gid=982,dmask=022,fmask=133,windows_names,discard     0 0
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+# /dev/nvme0n1p6 LABEL=arch
+UUID=56b2ec89-7715-45bb-9e3d-ebebf794a4b3	/         	btrfs     	rw,noatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@	0 0
+
+# /dev/nvme0n1p6 LABEL=arch
+UUID=56b2ec89-7715-45bb-9e3d-ebebf794a4b3	/home     	btrfs     	rw,noatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@home	0 0
+
+# /dev/nvme0n1p6 LABEL=arch
+UUID=56b2ec89-7715-45bb-9e3d-ebebf794a4b3	/var/log  	btrfs     	rw,noatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@log	0 0
+
+# /dev/nvme0n1p6 LABEL=arch
+UUID=56b2ec89-7715-45bb-9e3d-ebebf794a4b3	/var/cache	btrfs     	rw,noatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@cache	0 0
+
+# /dev/nvme0n1p6 LABEL=arch
+UUID=56b2ec89-7715-45bb-9e3d-ebebf794a4b3	/home/ashu/.cache	btrfs	rw,noatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@ashu-cache	0 0
+
+# /dev/nvme0n1p1 LABEL=EFI
+UUID=4236-2DB6      	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+
+# /dev/nvme0n1p6 LABEL=arch
+UUID=56b2ec89-7715-45bb-9e3d-ebebf794a4b3	/.snapshots	btrfs     	rw,noatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@snapshots	0 0
+
+# /dev/nvme0n1p2 LABEL=data
+UUID=4F8F8A094BF342B5	/mnt/data	ntfs3	uid=1000,gid=1000,umask=0022,prealloc,windows_names,discard	0 0
+
+# /dev/nvme0n1p7
+UUID=6c4c90cf-3cbe-481c-abc2-77ac99035126	none      	swap      	defaults  	0 0
+
