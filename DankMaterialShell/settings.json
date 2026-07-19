@@ -252,9 +252,34 @@
   "appPickerViewMode": "grid",
   "filePickerUsageHistory": {
     "mpv": {
-      "count": 4,
-      "lastUsed": 1784469207342,
+      "count": 11,
+      "lastUsed": 1784480330009,
       "name": "mpv Media Player"
+    },
+    "nvim": {
+      "count": 37,
+      "lastUsed": 1784480804608,
+      "name": "Neovim"
+    },
+    "btop": {
+      "count": 1,
+      "lastUsed": 1784479110967,
+      "name": "btop++"
+    },
+    "zen": {
+      "count": 2,
+      "lastUsed": 1784479163192,
+      "name": "Zen Browser"
+    },
+    "Alacritty": {
+      "count": 1,
+      "lastUsed": 1784480332743,
+      "name": "Alacritty"
+    },
+    "code-oss": {
+      "count": 2,
+      "lastUsed": 1784480355495,
+      "name": "Code - OSS"
     }
   },
   "sortAppsAlphabetically": false,
@@ -604,12 +629,12 @@
         "weather"
       ],
       "rightWidgets": [
+        "systemTray",
         {
           "id": "systemUpdate",
           "enabled": true,
           "hideWhenIdle": true
         },
-        "systemTray",
         "clipboard",
         {
           "id": "cpuUsage",

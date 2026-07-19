@@ -1,0 +1,14 @@
+#!/bin/sh
+dconf dump / > "$HOME/.config/dconf/dconf-settings.ini"
+git add "$HOME/.config/dconf/dconf-settings.ini"
+
+safe_copy() {
+    if [ -f "$1" ]; then
+        cp "$1" "$HOME/.config/etc/$(basename "$1")"
+    fi
+}
+
+safe_copy /etc/pacman.conf
+safe_copy /etc/fstab
+safe_copy /etc/environment
+git add etc/

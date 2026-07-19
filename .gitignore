@@ -8,11 +8,13 @@
 !config.kdl
 !environment.d/**
 !curd/**
+!dconf/dconf-settings.ini
 !DankMaterialShell/**
 DankMaterialShell/plugins/**
 !dolphinrc
 !electron-flags.conf
 !etc/**
+!.git-hooks/**
 !gtk-*/**
 !hypr/**
 !kdeglobals

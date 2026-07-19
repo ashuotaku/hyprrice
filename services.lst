@@ -1,7 +1,6 @@
 sudo systemctl enable cronie
 sudo systemctl enable ly@tty1.service
 sudo systemctl disable getty@tty1.service
-sudo systemctl enable nvidia-persistenced.service
 sudo systemctl enable nvidia-suspend.service nvidia-hibernate.service nvidia-resume.service
 sudo systemctl enable tlp
 sudo systemctl enable tlp-pd
