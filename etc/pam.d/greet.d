@@ -1,0 +1,3 @@
+# Add at the end.
+auth       optional     pam_gnome_keyring.so
+session    optional     pam_gnome_keyring.so auto_start
