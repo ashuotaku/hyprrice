@@ -3,9 +3,12 @@ binds {
     Mod+Alt+R { spawn "dms" "ipc" "outputs" "cycleProfile"; }
     Mod+BackSpace hotkey-overlay-title="Power Menu: Toggle" { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
     Mod+L hotkey-overlay-title="Lock Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
+    Mod+S hotkey-overlay-title="Spotlight Bar: Toggle" { spawn "dms" "ipc" "call" "spotlight-bar" "toggle"; }
     Mod+V hotkey-overlay-title="Clipboard: Toggle" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
     Mod+period { spawn-sh "dms ipc call spotlight toggle && sleep 0.05 && wtype ':e '"; }
-    Mod+space hotkey-overlay-title="Spotlight Bar: Toggle" { spawn "dms" "ipc" "call" "spotlight-bar" "toggle"; }
+    Mod+Alt+Shift+S { screenshot-window; }
+    Mod+Ctrl+Shift+S { screenshot-screen; }
+    Mod+Shift+S { screenshot; }
     Ctrl+Shift+Escape { spawn "alacritty" "-e" "btop"; }
     Mod+Alt+T { spawn "~/.config/niri/scripts/toggle-refresh.sh"; }
     Mod+B { spawn "zen-browser"; }

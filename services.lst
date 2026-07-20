@@ -10,3 +10,4 @@ sudo systemctl enable warp-svc.service
 sudo systemctl enaable preload
 systemctl --user enable syncthing
 sudo systemctl enable fstrim.timer
+sudo systemctl enable legiond.service

@@ -4,6 +4,7 @@
 !alacritty/**
 !applications/**
 !ashell/**
+!bin/**
 !chromium-flags.conf
 !config.kdl
 !environment.d/**

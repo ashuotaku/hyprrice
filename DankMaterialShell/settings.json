@@ -123,7 +123,8 @@
     {
       "id": "brightnessSlider",
       "enabled": true,
-      "width": 50
+      "width": 50,
+      "deviceName": "leds:platform::fnlock"
     },
     {
       "id": "wifi",
@@ -359,7 +360,7 @@
   "launcherLogoContrast": 1,
   "launcherLogoSizeOffset": 0,
   "fontFamily": "Fira Code",
-  "monoFontFamily": "JetBrainsMonoNL Nerd Font Mono",
+  "monoFontFamily": "Fira Code",
   "fontWeight": 400,
   "fontScale": 1,
   "textRenderType": 0,
@@ -396,7 +397,7 @@
   "batterySuspendBehavior": 0,
   "batteryProfileName": "",
   "batteryPostLockMonitorTimeout": 0,
-  "batteryChargeLimit": 80,
+  "batteryChargeLimit": 100,
   "batteryNotifyChargeLimit": true,
   "batteryCriticalThreshold": 10,
   "batteryNotifyCritical": true,
@@ -596,7 +597,7 @@
   "hyprlandOutputSettings": {},
   "displayProfiles": {},
   "activeDisplayProfile": {
-    "niri": "profile_1784487676037_c0q77ef"
+    "niri": "profile_1784487690998_nbs9ey0"
   },
   "displayProfileAutoSelect": false,
   "displayShowDisconnected": false,
